@@ -52,18 +52,19 @@ Verkkokauppa/
 ├── package.json                   # Project dependencies and scripts
 ├── README.md                      # Project documentation
 
+1. Clone project
+Git clone https://github.com/Lorzweq/ebayzalando.git
 
-
-2. Install dependencies:
+3. Install dependencies:
 npm install
 
-3. Set up environment variables:
-Create a .env file in the root directory and add the following:
+4. Set up environment variables:
+Create a .env file in the root directory and add supabase api's
 
-4. Start the development server:
+6. Start the development server:
 npm run dev
 
-5. Open the app in your browser:
+7. Open the app in your browser:
 http://localhost:5173
 
 ## Usage

@@ -52,6 +52,43 @@ Verkkokauppa/
 ├── package.json                   # Project dependencies and scripts
 ├── README.md                      # Project documentation
 
+
++---src
+    ª   App.jsx
+    ª   index.css
+    ª   main.jsx
+    ª   
+    +---assets
+    ª   ª   apple.png
+    ª   ª   playstore.svg
+    ª   ª   react.svg
+    ª   ª   
+    ª   +---products
+    ª           1.png
+    ª           
+    +---components
+    ª       arrow.css
+    ª       CheckoutForm.jsx
+    ª       footer.jsx
+    ª       header.jsx
+    ª       headercommercial.jsx
+    ª       maintop.jsx
+    ª       MarketingPost.jsx
+    ª       Posts.jsx
+    ª       product.jsx
+    ª       
+    +---pages
+            AdminDashboard.jsx
+            Cart.jsx
+            Login.jsx
+            MarketingDashboard.jsx
+            ProductPage.jsx
+            Register.jsx
+            SearchResults.jsx
+            ShoppingHistory.jsx
+            UnderDevelopment.jsx
+            [id].js
+
 1. Clone project
 Git clone https://github.com/Lorzweq/ebayzalando.git
 

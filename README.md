@@ -28,7 +28,31 @@ Ebayzalando is a modern e-commerce platform built with React and Vite. It allows
 
 ## Project Structure
 
-Verkkokauppa/ ├── src/ │ ├── components/ │ │ ├── Header.jsx │ │ ├── Footer.jsx │ │ ├── Product.jsx │ │ ├── MarketingPost.jsx │ │ ├── Posts.jsx │ │ ├── CheckoutForm.jsx │ ├── pages/ │ │ ├── Home.jsx │ │ ├── ProductPage.jsx │ │ ├── Cart.jsx │ │ ├── Login.jsx │ │ ├── Register.jsx │ │ ├── ShoppingHistory.jsx │ │ ├── AdminDashboard.jsx │ ├── supabaseClient.js │ ├── App.jsx ├── public/ ├── .env ├── package.json ├── README.md
+Verkkokauppa/
+├── src/
+│   ├── components/                # Reusable UI components
+│   │   ├── Header.jsx             # Header component
+│   │   ├── Footer.jsx             # Footer component
+│   │   ├── Product.jsx            # Product card component
+│   │   ├── MarketingPost.jsx      # Marketing post creation and management
+│   │   ├── Posts.jsx              # Display posts
+│   │   ├── CheckoutForm.jsx       # Checkout form component
+│   ├── pages/                     # Page components for routing
+│   │   ├── Home.jsx               # Home page
+│   │   ├── ProductPage.jsx        # Product details page
+│   │   ├── Cart.jsx               # Shopping cart page
+│   │   ├── Login.jsx              # Login page
+│   │   ├── Register.jsx           # Registration page
+│   │   ├── ShoppingHistory.jsx    # User shopping history page
+│   │   ├── AdminDashboard.jsx     # Admin dashboard for user and role management
+│   ├── supabaseClient.js          # Supabase client configuration
+│   ├── App.jsx                    # Main application component
+├── public/                        # Static assets (images, etc.)
+├── .env                           # Environment variables
+├── package.json                   # Project dependencies and scripts
+├── README.md                      # Project documentation
+
+
 
 2. Install dependencies:
 npm install
@@ -66,35 +90,35 @@ http://localhost:5173
 
 ### 1.users
 
-id: UUID
-email: User email
-password: User password (hashed)
-role: User role (e.g., admin, marketing, user)
+- id: UUID
+- email: User email
+- password: User password (hashed)
+- role: User role (e.g., admin, marketing, user)
 
 ### 2.products
 
-id: Product ID
-name: Product name
-description: Product description
-price: Product price
-image_url: URL of the product image
-category: Product category
-stock: Stock quantity
+- id: Product ID
+- name: Product name
+- description: Product description
+- price: Product price
+- image_url: URL of the product image
+- category: Product category
+- stock: Stock quantity
 
 ### 3.shopping_history
 
-id: Order ID
-user_id: User ID
-product_name: Name of the purchased product
-price: Price of the product
-amount: Quantity purchased
-created_at: Timestamp of the purchase
+- id: Order ID
+- user_id: User ID
+- product_name: Name of the purchased product
+- price: Price of the product
+- amount: Quantity purchased
+- created_at: Timestamp of the purchase
 
 ### 4.posts
 
-id: Post ID
-title: Post title
-content: Post content
-image_url: URL of the post image
-hidden: Boolean to indicate if the post is hidden
-created_at: Timestamp of the post creation
+- id: Post ID
+- title: Post title
+- content: Post content
+- image_url: URL of the post image
+- hidden: Boolean to indicate if the post is hidden
+- created_at: Timestamp of the post creation

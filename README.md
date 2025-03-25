@@ -28,9 +28,10 @@ Ebayzalando is a modern e-commerce platform built with React and Vite. It allows
 
 ## Project Structure
 
+```
 Verkkokauppa/
-├── src/      │   ├── components/                # Reusable UI components                           
-                         
+├── src/          
+│   ├── components/                # Reusable UI components                                              
 │   │   ├── Header.jsx             # Header component
 │   │   ├── Footer.jsx             # Footer component
 │   │   ├── Product.jsx            # Product card component
@@ -51,6 +52,8 @@ Verkkokauppa/
 ├── .env                           # Environment variables
 ├── package.json                   # Project dependencies and scripts
 ├── README.md                      # Project documentation
+
+```
 
 - **Verkkokauppa/**
   - **src/**

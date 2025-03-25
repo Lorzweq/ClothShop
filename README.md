@@ -55,25 +55,6 @@ Verkkokauppa/
 
 ```
 
-- **Verkkokauppa/**
-  - **src/**
-    - **components/** (Reusable UI components)
-      - Header.jsx (Header component)
-      - Footer.jsx (Footer component)
-      - Product.jsx (Product card component)
-    - **pages/** (Page components for routing)
-      - Home.jsx (Home page)
-      - ProductPage.jsx (Product details page)
-      - Cart.jsx (Shopping cart page)
-      - Login.jsx (Login page)
-  - supabaseClient.js (Supabase configuration)
-  - App.jsx (Main application component)
-- **public/** (Static assets)
-- **.env** (Environment variables)
-- **package.json** (Project dependencies)
-- **README.md** (Project documentation)
-
-
 
 1. Clone project
 Git clone https://github.com/Lorzweq/ebayzalando.git

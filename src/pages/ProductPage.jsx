@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import CheckoutForm from '../components/CheckoutForm';
+import supabase from '../../supabaseClient';
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -19,26 +20,28 @@ const ProductPage = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/products/${id}`);
-        
-        // Check for successful response
-        if (!response.ok) {
+        // Fetch the product by id from Supabase
+        const { data: productData, error: productError } = await supabase
+          .from('products')
+          .select('*')
+          .eq('id', id)
+          .single();
+
+        if (productError) {
           throw new Error('Failed to fetch product');
         }
 
-        const data = await response.json();
-        console.log('Fetched product data:', data);
-        
-        // Ensure the response is not an array (in case the API is incorrect)
-        if (Array.isArray(data)) {
-          throw new Error('Product not found');
-        }
-
-        setProduct(data);
+        setProduct(productData);
 
         // Fetch suggested products (excluding the current product)
-        const allProductsResponse = await fetch('http://localhost:5000/api/products');
-        const allProducts = await allProductsResponse.json();
+        const { data: allProducts, error: allProductsError } = await supabase
+          .from('products')
+          .select('*');
+
+        if (allProductsError) {
+          throw new Error('Failed to fetch products');
+        }
+
         const suggested = allProducts.filter(p => p.id !== id).slice(0, 4); // Get 4 suggested products
         setSuggestedProducts(suggested);
       } catch (err) {
@@ -52,25 +55,22 @@ const ProductPage = () => {
   }, [id]);
 
   // Add product to cart
-  
+  const addToCart = () => {
+    setCart(prevCart => {
+      const updatedCart = [...prevCart, product];
+      localStorage.setItem('cart', JSON.stringify(updatedCart)); // Save to localStorage
 
-const addToCart = () => {
-  setCart(prevCart => {
-    const updatedCart = [...prevCart, product];
-    localStorage.setItem('cart', JSON.stringify(updatedCart)); // Save to localStorage
+      // Set message and start the fade effect
+      setAddedToCartMessage('Added to cart');
+      
+      // Remove message after 3 seconds
+      setTimeout(() => {
+        setAddedToCartMessage('');
+      }, 3000);
 
-    // Set message and start the fade effect
-    setAddedToCartMessage('Added to cart');
-    
-    // Remove message after 3 seconds
-    setTimeout(() => {
-      setAddedToCartMessage('');
-    }, 3000);
-
-    return updatedCart;
-  });
-};
-
+      return updatedCart;
+    });
+  };
 
   // Proceed to checkout
   const proceedToCheckout = () => {
@@ -90,7 +90,7 @@ const addToCart = () => {
   // Render the product details and suggested items
   return (
     <div className={`container mx-auto p-6 ${showCheckout ? 'backdrop-blur-sm' : ''}`}>
-      <div className="bg-white p-6 rounded shadow-lg max-w-4xl mx-auto">
+      <div className="bg-white border border-gray-200 p-6 rounded shadow-lg max-w-4xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <img 
             src={product.image_url} 
@@ -114,7 +114,6 @@ const addToCart = () => {
             >
               <h2>{addedToCartMessage}</h2>
             </div>
-
 
             <button 
               onClick={proceedToCheckout} 
@@ -147,7 +146,7 @@ const addToCart = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {suggestedProducts.map(suggestedProduct => (
             <Link key={suggestedProduct.id} to={`/product/${suggestedProduct.id}`} className="no-underline">
-              <div className="bg-white p-4 rounded shadow flex flex-col items-center cursor-pointer">
+              <div className="bg-white border border-gray-200 p-4 rounded shadow flex flex-col items-center cursor-pointer">
                 <img
                   src={suggestedProduct.image_url}
                   alt={suggestedProduct.name}

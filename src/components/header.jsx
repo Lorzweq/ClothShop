@@ -69,11 +69,26 @@ const Header = () => {
             </li>
             {userRole === 'admin' && (
               <li>
-                <NavLink to="/admin" className="flex items-center justify-center">
+                <NavLink to="/AdminDashboard" className="flex items-center justify-center">
                   <span className="material-symbols-outlined text-2xl">admin_panel_settings</span>
                 </NavLink>
               </li>
             )}
+            {(userRole === 'marketing' || userRole === 'admin') && (
+              <li>
+                <NavLink to="/MarketingDashboard" className="flex items-center justify-center">
+                  <span className="material-symbols-outlined text-2xl">campaign</span>
+                </NavLink>
+              </li>
+            )}
+            {(userRole === 'marketing' || userRole === 'admin') && (
+              <li>
+                <NavLink to="/create-post" className="flex items-center justify-center">
+                <span className="material-symbols-outlined">add_circle</span>
+                </NavLink>
+              </li>
+            )}
+
             {authToken && (
               <li>
                 <button

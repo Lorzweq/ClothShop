@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import supabase from '../../supabaseClient';
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -7,17 +8,18 @@ const Product = () => {
   const [category, setCategory] = useState('All');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const userRole = localStorage.getItem('userRole'); // Get the user role from localStorage
+  const userRole = localStorage.getItem('userRole');
 
-  // Fetch product data from the server
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/products');
-        if (!response.ok) {
+        const { data, error } = await supabase
+          .from('products')
+          .select('*');
+
+        if (error) {
           throw new Error('Failed to fetch products');
         }
-        const data = await response.json();
         setProducts(data);
         setFilteredProducts(data);
       } catch (err) {
@@ -30,7 +32,6 @@ const Product = () => {
     fetchProducts();
   }, []);
 
-  // Filter products by category
   useEffect(() => {
     if (category === 'All') {
       setFilteredProducts(products);
@@ -65,27 +66,42 @@ const Product = () => {
           <option value="Suit">Suit</option>
           <option value="Sweatshirt">Sweatshirt</option>
           <option value="Pants">Pants</option>
+          <option value="Shoes">Shoes</option>
         </select>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {filteredProducts.map((product) => (
-          <Link key={product.id} to={`/product/${product.id}`} className="no-underline">
-            <div className="bg-white p-4 rounded shadow flex flex-col items-center cursor-pointer">
-              <img
-                src={product.image_url}
-                alt={product.name}
-                className="w-full h-full object-cover mb-4"
-              />
-              <h2 className="text-xl font-semibold mb-2 text-center">{product.name}</h2>
-              <p className="text-gray-700 mb-2 text-center">{product.description}</p>
-              <p className="text-gray-900 font-bold text-center">{product.price}€</p>
-              {(userRole === 'admin' || userRole === 'marketing') && (
-                <p className="text-gray-700 text-center">In stock: {product.stock}</p>
-              )}
-            </div>
-          </Link>
-        ))}
+  {filteredProducts.map((product) => (
+    <Link key={product.id} to={`/product/${product.id}`} className="no-underline">
+      
+      <div className="bg-white border border-gray-200 p-4 rounded shadow flex flex-col items-center cursor-pointer">
+        <img
+          src={product.image_url}
+          alt={product.name}
+          className="w-full h-full object-cover mb-4"
+        />
+        <h2 className="text-xl font-semibold mb-2 text-center">{product.name}</h2>
+        <p className="text-gray-700 mb-2 text-center">{product.description}</p>
+        {product.sale_price && (
+        <h2 className="text-red-500 font-bold text-center">ON SALE</h2>
+      )}
+        <p className="text-gray-900 font-bold text-center">
+          {product.sale_price ? (
+            <>
+              <span className="line-through text-red-500 mr-2">{product.price}€</span>
+              {product.sale_price}€
+            </>
+          ) : (
+            `${product.price}€`
+          )}
+        </p>
+        {(userRole === 'admin' || userRole === 'marketing') && (
+          <p className="text-gray-700 text-center">In stock: {product.stock}</p>
+        )}
       </div>
+    </Link>
+  ))}
+</div>
+
     </div>
   );
 };

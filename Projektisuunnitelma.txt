@@ -1,0 +1,38 @@
+Verkkokauppa - Projektisuunnitelma
+
+Projektin Kuvaus
+
+Tämä projekti on verkkokauppa-alusta, jossa käyttäjät voivat selata tuotteita, lisätä niitä ostoskoriin, tehdä ostoksia ja tarkastella ostohistoriaansa. Projekti on rakennettu Reactilla ja käyttää Supabase-palvelua tietokannan hallintaan ja autentikointiin.
+
+Ominaisuudet
+Tuotteiden selaus: Käyttäjät voivat selata tuotteita eri kategorioissa.
+Tuotesivut: Jokaisella tuotteella on oma yksityiskohtainen sivunsa.
+Ostoskori: Käyttäjät voivat lisätä tuotteita ostoskoriin ja tarkastella ostoskorin sisältöä.
+Kassa: Käyttäjät voivat tehdä ostoksia ja tallentaa ne ostohistoriaan.
+Ostohistoria: Käyttäjät voivat tarkastella aiempia tilauksiaan.
+Käyttäjäroolit: Admin- ja markkinointikäyttäjille on omat hallintapaneelinsa.
+Hakutoiminto: Käyttäjät voivat etsiä tuotteita hakukentän avulla.
+Teknologiat
+Frontend: React, React Router
+Backend: Supabase (PostgreSQL-tietokanta ja autentikointi)
+Tyylit: Tailwind CSS
+Maksut: Stripe (integrointi maksujen käsittelyyn)
+Tietokanta
+Tietokanta on rakennettu Supabasen päälle
+
+Asennus
+Kloonaa projekti:
+
+Asenna riippuvuudet:
+
+Aseta ympäristömuuttujat: Luo .env-tiedosto projektin juureen ja lisää seuraavat:
+
+Käynnistä kehityspalvelin:
+
+Käyttö
+Etusivu: Näyttää tuotteet ja kategoriat.
+Tuotesivu: Näyttää yksityiskohtaiset tiedot tuotteesta.
+Ostoskori: Näyttää lisätyt tuotteet ja mahdollistaa kassalle siirtymisen.
+Kirjautuminen: Käyttäjät voivat kirjautua sisään sähköpostilla ja salasanalla.
+Rekisteröityminen: Uudet käyttäjät voivat luoda tilin.
+Ostohistoria: Näyttää käyttäjän aiemmat tilaukset.

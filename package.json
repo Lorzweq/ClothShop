@@ -12,8 +12,10 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^3.5.1",
     "@stripe/stripe-js": "^6.1.0",
+    "@supabase/supabase-js": "^2.49.3",
     "@tailwindcss/vite": "^4.0.15",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "lowdb": "^7.0.1",

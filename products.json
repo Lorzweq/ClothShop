@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "name": "Pier One",
+    "description": "Chinot - dark grey",
+    "category": "Chinos",
+    "price": 17.55,
+    "image_url": "https://img01.ztat.net/article/spp-media-p1/21c35c535178497fb6fb72387eb5960a/1c2c70aeba034a7d856955f5d5826ff2.jpg?imwidth=300",
+    "stock": 10
+  },
+  {
+    "id": "2",
+    "name": "Björn Borg",
+    "description": "Essential 7 PACK - Alushousut - black",
+    "category": "Underwear",
+    "price": 53.95,
+    "image_url": "https://img01.ztat.net/article/spp-media-p1/3d7272694d5545b4a2a054e4a161717a/a18cff4994754f76968c50be88209b9f.jpg?imwidth=300&filter=packshot"
+    ,"stock": 34
+  },
+  {
+    "id": "3",
+    "name": "Pier One",
+    "description": "5 PACK - T-paita - white/black",
+    "category": "T-shirts",
+    "price": 23.95,
+    "image_url": "https://img01.ztat.net/article/spp-media-p1/dbe5f6860eea44bc88cb2dd695851053/f17bddb7962e491b818f7d5320b4fdf4.jpg?imwidth=300&filter=packshot"
+    ,"stock": 32
+  },
+  {
+    "id": "4",
+    "name": "Jack & Jones",
+    "description": "JJIGLENN JJORIGINAL - Slim fit -farkut",
+    "category": "Jeans",
+    "price": 23.95,
+    "image_url": "https://img01.ztat.net/article/spp-media-p1/1466151c9fa134f69a9ff238cee69dd9/66dbff62d20f409d9b4724053986d099.jpg?imwidth=300"
+    ,"stock": 9
+  },
+  {
+    "id": "5",
+    "name": "Jack & Jones PREMIUM",
+    "description": "CREW NECK - Printtipaita - white",
+    "category": "T-shirts",
+    "price": 17.55,
+    "image_url": "https://img01.ztat.net/article/spp-media-p1/7a5c13681bed4e57881c75b02dd3d980/064cb06c5f11484aabcf29bd7ebb78dc.jpg?imwidth=300&filter=packshot"
+    ,"stock": 2
+  },
+  {
+    "id": "6",
+    "name": "G-STAR",
+    "description": "3301 STRAIGHT TAPERED - Straight leg -farkut",
+    "category": "Jeans",
+    "price": 103.95,
+    "image_url": "https://img01.ztat.net/article/spp-media-p1/f07aa9f890d94be282cc6fdee9eeab44/d57f7c1ff3874fc7b5c246bb77453ca5.jpg?imwidth=300"
+    ,"stock": 73
+  },
+  {
+    "id": "7",
+    "name": "Isaac Dewhirst",
+    "description": "TEXTURE SLIM FIT - Puku - blue",
+    "category": "Suit",
+    "price": 95.95,
+    "image_url": "https://img01.ztat.net/article/spp-media-p1/10ea16b251bc3c5fbedc05b538fbea38/7dac7ce4bdab49f6a3b72065a249572c.jpg?imwidth=300"
+    ,"stock": 83
+  },
+  {
+    "id": "8",
+    "name": "Only & Sons",
+    "description": "ONSMATT LONGY TEE 7 PACK - T-paita ",
+    "category": "T-shirts",
+    "price": 41.95,
+    "image_url": "https://img01.ztat.net/article/spp-media-p1/beda4bcc108e45d889f02dfb0c316ff2/adf75a1e44704abb8aeea127e890b6e7.jpg?imwidth=300"
+    ,"stock": 93
+  },
+  {
+    "id": "9",
+    "name": "Jack & Jones PREMIUM",
+    "description": "JPRBLA BASIC TEE TURTLE 2 PACK  - T-paita",
+    "category": "T-shirts",
+    "price": 26.75,
+    "image_url": "https://img01.ztat.net/article/spp-media-p1/007f9a924f2e34e28b8b24d0996f99af/ed2cff1dfad64376b39c34f72565bf5d.jpg?imwidth=300"
+    ,"stock": 8
+  },
+  {
+    "id": "10",
+    "name": "Pier One",
+    "description": "Collegepaita - tan",
+    "category": "Sweatshirt",
+    "price": 14.95,
+    "image_url": "https://img01.ztat.net/article/spp-media-p1/f77c3889787d46439632ea80938c3336/0c352f96b78b448681c90d812fa9b459.jpg?imwidth=300"
+    ,"stock": 632
+  },
+  {
+    "id": "11",
+    "name": "Levi's",
+    "description": "ORIGINAL - Printtipaita - dress blues",
+    "category": "T-shirts",
+    "price": 19.95,
+    "image_url": "https://img01.ztat.net/article/spp-media-p1/c5bb382ed06b43e58f93d14d18252794/c9993ebafa73426f833156099280b074.jpg?imwidth=300"
+    ,"stock": 82
+  },
+  {
+    "id": "12",
+    "name": "Nike Sportswear",
+    "description": "CLUB PANT - Verryttelyhousut - black",
+    "category": "Pants",
+    "price": 48.95,
+    "image_url": "https://img01.ztat.net/article/spp-media-p1/4b0c95ed420d4d54be4c70a5dd81644f/1011a1cc140d42a987ca26fa3d5a070e.jpg?imwidth=300&filter=packshot"
+    ,"stock": 5
+  }
+]

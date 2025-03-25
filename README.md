@@ -1,6 +1,6 @@
-# Verkkokauppa - E-commerce Platform
+# ebayzalando - E-commerce Platform
 
-Verkkokauppa is a modern e-commerce platform built with React and Vite. It allows users to browse products, add them to their cart, make purchases, and view their shopping history. The platform also includes admin and marketing dashboards for managing users and creating marketing posts.
+Ebayzalando is a modern e-commerce platform built with React and Vite. It allows users to browse products, add them to their cart, make purchases, and view their shopping history. The platform also includes admin and marketing dashboards for managing users and creating marketing posts.
 
 ## Features
 

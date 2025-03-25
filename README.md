@@ -34,7 +34,7 @@ Verkkokauppa/
 │   │   ├── Header.jsx             # Header component
 │   │   ├── Footer.jsx             # Footer component
 │   │   ├── Product.jsx            # Product card component
-│   │   ├── MarketingPost.jsx      # Marketing post creation and management
+│  │   ├── MarketingPost.jsx      # Marketing post creation and management
 │   │   ├── Posts.jsx              # Display posts
 │   │   ├── CheckoutForm.jsx       # Checkout form component
 │   ├── pages/                     # Page components for routing
@@ -51,11 +51,6 @@ Verkkokauppa/
 ├── .env                           # Environment variables
 ├── package.json                   # Project dependencies and scripts
 ├── README.md                      # Project documentation
-
-
- ``` Verkkokauppa/ ├── src/ │ ├── components/ # Reusable UI components │ │ ├── Header.jsx # Header component │ │ ├── Footer.jsx # Footer component │ │ ├── Product.jsx # Product card component │ │ ├── MarketingPost.jsx # Marketing post creation and management │ │ ├── Posts.jsx # Display posts │ │ ├── CheckoutForm.jsx # Checkout form component │ ├── pages/ # Page components for routing │ │ ├── Home.jsx # Home page │ │ ├── ProductPage.jsx # Product details page │ │ ├── Cart.jsx # Shopping cart page │ │ ├── Login.jsx # Login page │ │ ├── Register.jsx # Registration page │ │ ├── ShoppingHistory.jsx # User shopping history page │ │ ├── AdminDashboard.jsx # Admin dashboard for user and role management │ ├── supabaseClient.js # Supabase client configuration │ ├── App.jsx # Main application component ├── public/ # Static assets (images, etc.) ├── .env # Environment variables ├── package.json # Project dependencies and scripts ├── README.md # Project documentation ```
-
- ## Hakemistorakenne
 
 - **Verkkokauppa/**
   - **src/**

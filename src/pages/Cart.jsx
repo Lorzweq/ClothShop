@@ -34,10 +34,13 @@ const Cart = () => {
         throw new Error('Your cart is empty.');
       }
 
+      const orderId = `${Date.now()}`; // Using timestamp for simplicity
+
       // Prepare order data
       const totalAmount = cart.reduce((total, item) => total + item.price, 0);
       const orderData = cart.map(item => ({
         user_id: userId,
+        order_id: orderId,
         product_name: item.name,
         price: item.price,
         amount: 1, // Adjust based on your cart structure

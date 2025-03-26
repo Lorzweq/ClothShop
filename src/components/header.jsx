@@ -102,7 +102,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <ul className="flex flex-col md:flex-row md:space-y-0 md:space-x-2 items-center mx-4 md:mx-45 md:mt-0 text-center">
+      <ul className="flex flex-col md:flex-row md:space-y-0 md:space-x-2 items-center md:ml-60 md:mt-0 text-center">
         <li><NavLink to="/nordic-style" className="hover:underline">Nordic Style</NavLink></li>
         <li><NavLink to="/new" className="hover:underline">New</NavLink></li>
         <li><NavLink to="/clothing" className="hover:underline">Clothing</NavLink></li>
@@ -114,13 +114,13 @@ const Header = () => {
         <li><NavLink to="/pre-owned" className="hover:underline">Pre-owned</NavLink></li>
         <li className="text-orange-700 hover:underline"><NavLink to="/outlet">Outlet</NavLink></li>
         <li>
-          <form onSubmit={handleSearch} className="flex items-center">
+          <form onSubmit={handleSearch} className="flex justify-start">
             <input
               type="text"
               id="searchBar"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="px-4 py-2 ml-0 md:ml-84 border border-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
+              className="px-4 py-2  ml-210 border border-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
               placeholder="Search..."
             />
             <button type="submit" className="hidden">Search</button>

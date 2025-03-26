@@ -158,7 +158,7 @@ const MarketingPost = () => {
       ) : (
         <div className="space-y-4">
           {posts.map((post) => (
-            <div key={post.id} className="bg-white p-4 rounded shadow">
+            <div key={post.id} className="bg-white border border-gray-200 p-4 rounded shadow-lg">
               <h3 className="text-lg font-bold">{post.title}</h3>
               <p className="text-gray-700">{post.content}</p>
               {post.image_url && (

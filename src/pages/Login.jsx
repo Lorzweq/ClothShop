@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import supabase from '../../supabaseClient';
+import bcrypt from 'bcryptjs'; // Import bcryptjs
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -10,17 +11,27 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
+    // Hash the password entered by the user (salt and hash the password)
+    const hashedPassword = bcrypt.hashSync(password, 10); // '10' is the salt rounds
+
     // Check credentials from Supabase
     const { data, error } = await supabase
       .from('users')
       .select('*')
       .eq('email', email)
-      .eq('password', password)
       .single();
 
     if (error) {
       alert('Invalid credentials');
       console.error('Error logging in:', error);
+      return;
+    }
+
+    // Check if the password matches the hashed password from the database
+    const isPasswordValid = bcrypt.compareSync(password, data.password); // Compare user-entered password with stored hash
+
+    if (!isPasswordValid) {
+      alert('Invalid credentials');
       return;
     }
 
@@ -32,6 +43,7 @@ const Login = () => {
     localStorage.setItem('userRole', userRole);
     localStorage.setItem('userId', userId); // Store userId here
 
+    console.log(localStorage.getItem('authToken'));
     // Navigate based on user role
     if (userRole === 'admin') {
       console.log('Logged in as admin');

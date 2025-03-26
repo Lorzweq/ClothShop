@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import supabase from '../../supabaseClient';
+import bcrypt from 'bcryptjs'; // Import bcryptjs for hashing
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -12,10 +13,13 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    // Insert new user into Supabase
+    // Hash the password before inserting it into the database
+    const hashedPassword = bcrypt.hashSync(password, 10); // '10' is the salt rounds
+
+    // Insert new user into Supabase with hashed password
     const { data, error } = await supabase
       .from('users')
-      .insert([{ name, email, password, role }]);
+      .insert([{ name, email, password: hashedPassword, role }]);
 
     if (error) {
       alert('Error registering user');
@@ -32,7 +36,7 @@ const Register = () => {
       <div className="bg-gray-800 text-white p-8 rounded-lg shadow-lg w-96">
         <h2 className="text-2xl font-semibold mb-4 text-center">Register</h2>
         <form onSubmit={handleRegister}>
-        <div className="mb-4">
+          <div className="mb-4">
             <label className="block text-sm font-medium mb-2">Name:</label>
             <input
               type="text"
@@ -75,7 +79,9 @@ const Register = () => {
             Register
           </button>
         </form>
-        <h2 className='text-center px-4 py-4 hover:underline'><a href="/login">Already have an account? Login</a></h2>
+        <h2 className="text-center px-4 py-4 hover:underline">
+          <a href="/login">Already have an account? Login</a>
+        </h2>
       </div>
     </div>
   );

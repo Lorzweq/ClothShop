@@ -1,6 +1,6 @@
-# ebayzalando - E-commerce Platform
+# ClothShop - E-commerce Platform 
 
-Ebayzalando is a modern e-commerce platform built with React and Vite. It allows users to browse products, add them to their cart, make purchases, and view their shopping history. The platform also includes admin and marketing dashboards for managing users and creating marketing posts.
+ClothShop is a modern e-commerce platform built with React and Vite. It allows users to browse products, add them to their cart, make purchases, and view their shopping history. The platform also includes admin and marketing dashboards for managing users and creating marketing posts.
 
 ## Features
 
@@ -29,7 +29,7 @@ Ebayzalando is a modern e-commerce platform built with React and Vite. It allows
 ## Project Structure
 
 ```
-Verkkokauppa/
+ClothShop/
 ├── src/          
 │   ├── components/                # Reusable UI components                                              
 │   │   ├── Header.jsx             # Header component
@@ -57,7 +57,7 @@ Verkkokauppa/
 
 
 1. Clone project
-Git clone https://github.com/Lorzweq/ebayzalando.git
+Git clone https://github.com/Lorzweq/ClothShop.git
 
 3. Install dependencies:
 npm install
